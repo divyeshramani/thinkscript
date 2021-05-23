@@ -1,12 +1,3 @@
-#TOS Indicators
-#Home of the Volatility Box
-#More info regarding this indicator here: tosindicators.com/supply-demand-edge
-#Code written in 2019 
-#Full Youtube Tutorial here: https://youtu.be/RNtsjfHYWfs
-#Credit to Ron Wikso for catching $TICK copy/paste error on lines 18 & 19
-#Credit to Brent Wilderman for adding code that enables study to work w/ extended hours on and off
-
-
 declare upper;
 declare hide_on_daily;
 

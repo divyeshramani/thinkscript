@@ -4,7 +4,7 @@
 #**10/6/19 - Feature Added: Ability for Users to Set Custom Standard Deviation in Label Output
 
 declare lower;
-input anchorDate = 20180901;
+input anchorDate = 20200101;
 input barsGoBack = 120;
 input showStopLabel = yes;
 input devStop = {default One, Two, Three, Zero, NegOne, NegTwo, NegThree, Custom};

@@ -29,7 +29,7 @@ def bullish = if vwma8 > vwma21 and vwma21 > vwma34 then 1 else 0;
 def bearish = if vwma8 < vwma21 and vwma21 < vwma34 then 1 else 0;
 def distribution = if !bullish and !bearish then 1 else 0;
 
-AddLabel(yes, if bullish and close >= VMA then "Stage: Acceleration" else if bearish and close <= VMA then "Stage: Deceleration" else if close>=VMA then "Stage: Accumulation" else "Stage: Distribution", if bullish and close >= VMA then color.green else if bearish and close <= VMA then color.red else if close >=VMA then color.yellow else color.orange);
+AddLabel(yes, if bullish and close >= VMA then "Stage: Accel  " else if bearish and close <= VMA then "Stage: Decel  " else if close>=VMA then "Stage: Accum  " else "Stage: Distr  ", if bullish and close >= VMA then color.green else if bearish and close <= VMA then color.red else if close >=VMA then color.yellow else color.orange);
 
 VMA.AssignValueColor(if bearish and close<= VMA then color.red
 else if bullish and close >= VMA then color.green

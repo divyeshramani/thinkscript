@@ -22,7 +22,7 @@ def SPYbullish = if SPYvwma8 > SPYvwma21 and SPYvwma21 > SPYvwma34 then 1 else 0
 def SPYbearish = if SPYvwma8 < SPYvwma21 and SPYvwma21 < SPYvwma34 then 1 else 0;
 def SPYdistribution = if !SPYbullish and !SPYbearish then 1 else 0;
 
-AddLabel(yes, "SPY: "+SPYPrice, if SPYBullish then color.green else if SPYBearish then color.red else if SPYDistribution then color.yellow else color.gray);
+AddLabel(yes, "SPY: "+SPYPrice + " ", if SPYBullish then color.green else if SPYBearish then color.red else if SPYDistribution then color.yellow else color.gray);
 
 ###QQQ
 def QQQprice = close(symbol="QQQ");
@@ -47,7 +47,7 @@ def QQQbullish = if QQQvwma8 > QQQvwma21 and QQQvwma21 > QQQvwma34 then 1 else 0
 def QQQbearish = if QQQvwma8 < QQQvwma21 and QQQvwma21 < QQQvwma34 then 1 else 0;
 def QQQdistribution = if !QQQbullish and !QQQbearish then 1 else 0;
 
-AddLabel(yes, "QQQ: "+QQQPrice, if QQQBullish then color.green else if QQQBearish then color.red else if QQQDistribution then color.yellow else color.gray);
+AddLabel(yes, "QQQ: "+QQQPrice + " ", if QQQBullish then color.green else if QQQBearish then color.red else if QQQDistribution then color.yellow else color.gray);
 
 
 ###IWM
@@ -73,7 +73,7 @@ def IWMbullish = if IWMvwma8 > IWMvwma21 and IWMvwma21 > IWMvwma34 then 1 else 0
 def IWMbearish = if IWMvwma8 < IWMvwma21 and IWMvwma21 < IWMvwma34 then 1 else 0;
 def IWMdistribution = if !IWMbullish and !IWMbearish then 1 else 0;
 
-AddLabel(yes, "IWM: "+IWMPrice, if IWMBullish then color.green else if IWMBearish then color.red else if IWMDistribution then color.yellow else color.gray);
+AddLabel(yes, "IWM: "+IWMPrice + " ", if IWMBullish then color.green else if IWMBearish then color.red else if IWMDistribution then color.yellow else color.gray);
 
 ###DIA
 
@@ -99,7 +99,7 @@ def DIAbullish = if DIAvwma8 > DIAvwma21 and DIAvwma21 > DIAvwma34 then 1 else 0
 def DIAbearish = if DIAvwma8 < DIAvwma21 and DIAvwma21 < DIAvwma34 then 1 else 0;
 def DIAdistribution = if !DIAbullish and !DIAbearish then 1 else 0;
 
-AddLabel(yes, "DIA: "+DIAPrice, if DIABullish then color.green else if DIABearish then color.red else if DIADistribution then color.yellow else color.gray);
+AddLabel(yes, "DIA: "+DIAPrice + " ", if DIABullish then color.green else if DIABearish then color.red else if DIADistribution then color.yellow else color.gray);
 
 
 ###$DJT
@@ -125,7 +125,7 @@ def DJTbullish = if DJTvwma8 > DJTvwma21 and DJTvwma21 > DJTvwma34 then 1 else 0
 def DJTbearish = if DJTvwma8 < DJTvwma21 and DJTvwma21 < DJTvwma34 then 1 else 0;
 def DJTdistribution = if !DJTbullish and !DJTbearish then 1 else 0;
 
-AddLabel(yes, "DJT: "+DJTPrice, if DJTBullish then color.green else if DJTBearish then color.red else if DJTDistribution then color.yellow else color.gray);
+AddLabel(yes, "DJT: "+DJTPrice + " ", if DJTBullish then color.green else if DJTBearish then color.red else if DJTDistribution then color.yellow else color.gray);
 
 
 ###SOXX
@@ -151,7 +151,7 @@ def SOXXbullish = if SOXXvwma8 > SOXXvwma21 and SOXXvwma21 > SOXXvwma34 then 1 e
 def SOXXbearish = if SOXXvwma8 < SOXXvwma21 and SOXXvwma21 < SOXXvwma34 then 1 else 0;
 def SOXXdistribution = if !SOXXbullish and !SOXXbearish then 1 else 0;
 
-AddLabel(yes, "SOXX: "+SOXXPrice, if SOXXBullish then color.green else if SOXXBearish then color.red else if SOXXDistribution then color.yellow else color.gray);
+AddLabel(yes, "SOXX: "+SOXXPrice + " ", if SOXXBullish then color.green else if SOXXBearish then color.red else if SOXXDistribution then color.yellow else color.gray);
 
 
 ##XLF
@@ -177,7 +177,7 @@ def XLFbullish = if XLFvwma8 > XLFvwma21 and XLFvwma21 > XLFvwma34 then 1 else 0
 def XLFbearish = if XLFvwma8 < XLFvwma21 and XLFvwma21 < XLFvwma34 then 1 else 0;
 def XLFdistribution = if !XLFbullish and !XLFbearish then 1 else 0;
 
-AddLabel(yes, "XLF: "+XLFPrice, if XLFBullish then color.green else if XLFBearish then color.red else if XLFDistribution then color.yellow else color.gray);
+AddLabel(yes, "XLF: "+XLFPrice + " ", if XLFBullish then color.green else if XLFBearish then color.red else if XLFDistribution then color.yellow else color.gray);
 
 ###XLY
 
@@ -203,7 +203,7 @@ def XLYbullish = if XLYvwma8 > XLYvwma21 and XLYvwma21 > XLYvwma34 then 1 else 0
 def XLYbearish = if XLYvwma8 < XLYvwma21 and XLYvwma21 < XLYvwma34 then 1 else 0;
 def XLYdistribution = if !XLYbullish and !XLYbearish then 1 else 0;
 
-AddLabel(yes, "XLY: "+XLYPrice, if XLYBullish then color.green else if XLYBearish then color.red else if XLYDistribution then color.yellow else color.gray);
+AddLabel(yes, "XLY: "+XLYPrice + " ", if XLYBullish then color.green else if XLYBearish then color.red else if XLYDistribution then color.yellow else color.gray);
 
 ###XLP
 def XLPprice = close(symbol="XLP");
@@ -228,7 +228,7 @@ def XLPbullish = if XLPvwma8 > XLPvwma21 and XLPvwma21 > XLPvwma34 then 1 else 0
 def XLPbearish = if XLPvwma8 < XLPvwma21 and XLPvwma21 < XLPvwma34 then 1 else 0;
 def XLPdistribution = if !XLPbullish and !XLPbearish then 1 else 0;
 
-AddLabel(yes, "XLP: "+XLPPrice, if XLPBullish then color.green else if XLPBearish then color.red else if XLPDistribution then color.yellow else color.gray);
+AddLabel(yes, "XLP: "+XLPPrice + " ", if XLPBullish then color.green else if XLPBearish then color.red else if XLPDistribution then color.yellow else color.gray);
 
 
 ###XLC
@@ -254,7 +254,7 @@ def XLCbullish = if XLCvwma8 > XLCvwma21 and XLCvwma21 > XLCvwma34 then 1 else 0
 def XLCbearish = if XLCvwma8 < XLCvwma21 and XLCvwma21 < XLCvwma34 then 1 else 0;
 def XLCdistribution = if !XLCbullish and !XLCbearish then 1 else 0;
 
-AddLabel(yes, "XLC: "+XLCPrice, if XLCBullish then color.green else if XLCBearish then color.red else if XLCDistribution then color.yellow else color.gray);
+AddLabel(yes, "XLC: "+XLCPrice + " ", if XLCBullish then color.green else if XLCBearish then color.red else if XLCDistribution then color.yellow else color.gray);
 
 
 ###IBB
@@ -280,7 +280,7 @@ def IBBbullish = if IBBvwma8 > IBBvwma21 and IBBvwma21 > IBBvwma34 then 1 else 0
 def IBBbearish = if IBBvwma8 < IBBvwma21 and IBBvwma21 < IBBvwma34 then 1 else 0;
 def IBBdistribution = if !IBBbullish and !IBBbearish then 1 else 0;
 
-AddLabel(yes, "IBB: "+IBBPrice, if IBBBullish then color.green else if IBBBearish then color.red else if IBBDistribution then color.yellow else color.gray);
+AddLabel(yes, "IBB: "+IBBPrice + " ", if IBBBullish then color.green else if IBBBearish then color.red else if IBBDistribution then color.yellow else color.gray);
 
 
 ###XLV
@@ -306,7 +306,7 @@ def XLVbullish = if XLVvwma8 > XLVvwma21 and XLVvwma21 > XLVvwma34 then 1 else 0
 def XLVbearish = if XLVvwma8 < XLVvwma21 and XLVvwma21 < XLVvwma34 then 1 else 0;
 def XLVdistribution = if !XLVbullish and !XLVbearish then 1 else 0;
 
-AddLabel(yes, "XLV: "+XLVPrice, if XLVBullish then color.green else if XLVBearish then color.red else if XLVDistribution then color.yellow else color.gray);
+AddLabel(yes, "XLV: "+XLVPrice + " ", if XLVBullish then color.green else if XLVBearish then color.red else if XLVDistribution then color.yellow else color.gray);
 
 
 ###XLE
@@ -332,7 +332,7 @@ def XLEbullish = if XLEvwma8 > XLEvwma21 and XLEvwma21 > XLEvwma34 then 1 else 0
 def XLEbearish = if XLEvwma8 < XLEvwma21 and XLEvwma21 < XLEvwma34 then 1 else 0;
 def XLEdistribution = if !XLEbullish and !XLEbearish then 1 else 0;
 
-AddLabel(yes, "XLE: "+XLEPrice, if XLEBullish then color.green else if XLEBearish then color.red else if XLEDistribution then color.yellow else color.gray);
+AddLabel(yes, "XLE: "+XLEPrice + " ", if XLEBullish then color.green else if XLEBearish then color.red else if XLEDistribution then color.yellow else color.gray);
 
 ###XLB
 def XLBprice = close(symbol="XLB");
@@ -357,7 +357,7 @@ def XLBbullish = if XLBvwma8 > XLBvwma21 and XLBvwma21 > XLBvwma34 then 1 else 0
 def XLBbearish = if XLBvwma8 < XLBvwma21 and XLBvwma21 < XLBvwma34 then 1 else 0;
 def XLBdistribution = if !XLBbullish and !XLBbearish then 1 else 0;
 
-AddLabel(yes, "XLB: "+XLBPrice, if XLBBullish then color.green else if XLBBearish then color.red else if XLBDistribution then color.yellow else color.gray);
+AddLabel(yes, "XLB: "+XLBPrice + " ", if XLBBullish then color.green else if XLBBearish then color.red else if XLBDistribution then color.yellow else color.gray);
 
 
 ###XLU
@@ -383,7 +383,7 @@ def XLUbullish = if XLUvwma8 > XLUvwma21 and XLUvwma21 > XLUvwma34 then 1 else 0
 def XLUbearish = if XLUvwma8 < XLUvwma21 and XLUvwma21 < XLUvwma34 then 1 else 0;
 def XLUdistribution = if !XLUbullish and !XLUbearish then 1 else 0;
 
-AddLabel(yes, "XLU: "+XLUPrice, if XLUBullish then color.green else if XLUBearish then color.red else if XLUDistribution then color.yellow else color.gray);
+AddLabel(yes, "XLU: "+XLUPrice + " ", if XLUBullish then color.green else if XLUBearish then color.red else if XLUDistribution then color.yellow else color.gray);
 
 
 ###XLRE
@@ -409,7 +409,7 @@ def XLREbullish = if XLREvwma8 > XLREvwma21 and XLREvwma21 > XLREvwma34 then 1 e
 def XLREbearish = if XLREvwma8 < XLREvwma21 and XLREvwma21 < XLREvwma34 then 1 else 0;
 def XLREdistribution = if !XLREbullish and !XLREbearish then 1 else 0;
 
-AddLabel(yes, "XLRE: "+XLREPrice, if XLREBullish then color.green else if XLREBearish then color.red else if XLREDistribution then color.yellow else color.gray);
+AddLabel(yes, "XLRE: "+XLREPrice + " ", if XLREBullish then color.green else if XLREBearish then color.red else if XLREDistribution then color.yellow else color.gray);
 
 
 ###XRT
@@ -435,4 +435,4 @@ def XRTbullish = if XRTvwma8 > XRTvwma21 and XRTvwma21 > XRTvwma34 then 1 else 0
 def XRTbearish = if XRTvwma8 < XRTvwma21 and XRTvwma21 < XRTvwma34 then 1 else 0;
 def XRTdistribution = if !XRTbullish and !XRTbearish then 1 else 0;
 
-AddLabel(yes, "XRT: "+XRTPrice, if XRTBullish then color.green else if XRTBearish then color.red else if XRTDistribution then color.yellow else color.gray);
+AddLabel(yes, "XRT: "+XRTPrice + " ", if XRTBullish then color.green else if XRTBearish then color.red else if XRTDistribution then color.yellow else color.gray);

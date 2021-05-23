@@ -1,4 +1,4 @@
-declare lower;
+declare upper;
 
 #Inputs
 
@@ -30,13 +30,13 @@ def curVolume = volume;
 
 # Labels
 
-AddLabel(Show30DayAvg, "Daily Avg: " + Round(volLast30DayAvg, 0) + " ", Color.LIGHT_GRAY);
+AddLabel(Show30DayAvg, "Daily Avg: " + Round(volLast30DayAvg, 0) + "  ", Color.LIGHT_GRAY);
 
-AddLabel(ShowTodayVolume, "Today: " + today + " ", (if percentOf30Day >= UnusualVolumePercent then Color.GREEN else if percentOf30Day >= 100 then Color.ORANGE else Color.LIGHT_GRAY));
+AddLabel(ShowTodayVolume, "Today: " + today + "  ", (if percentOf30Day >= UnusualVolumePercent then Color.GREEN else if percentOf30Day >= 100 then Color.ORANGE else Color.LIGHT_GRAY));
 
-AddLabel(ShowPercentOf30DayAvg, percentOf30Day + "%", (if percentOf30Day >= UnusualVolumePercent then Color.GREEN else if percentOf30Day >= 100 then Color.ORANGE else Color.WHITE) );
+AddLabel(ShowPercentOf30DayAvg, percentOf30Day + "% ", (if percentOf30Day >= UnusualVolumePercent then Color.GREEN else if percentOf30Day >= 100 then Color.ORANGE else Color.WHITE) );
 
-AddLabel(Show30BarAvg, "Avg 30 Bars: " + Round(avg30Bars, 0) + " ", Color.LIGHT_GRAY);
+AddLabel(Show30BarAvg, "Avg 30 Bars: " + Round(avg30Bars, 0) + "  ", Color.LIGHT_GRAY);
 
-AddLabel(ShowCurrentBar, "Cur Bar: " + curVolume + " ", (if curVolume >= avg30Bars then Color.GREEN else Color.ORANGE));
+AddLabel(ShowCurrentBar, "Cur Bar: " + curVolume + "  ", (if curVolume >= avg30Bars then Color.GREEN else Color.ORANGE));
 

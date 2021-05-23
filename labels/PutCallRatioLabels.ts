@@ -12,7 +12,7 @@ def trinRatio = Round(close(symbol = "$TRIN"), 2);
 # $TRIN < 0.5 indicates Overbought. 
 def trinOverlyBearish = if trinRatio >= 2 then 1 else 0;
 def trinOverlyBullish = if trinRatio <= 0.5 then 1 else 0;
-AddLabel(trin, "$TRIN: " + trinRatio + " ", if trinOverlyBullish then Color.GREEN
+AddLabel(trin, "$TRIN: " + trinRatio + "  ", if trinOverlyBullish then Color.GREEN
          else if trinOverlyBearish > 0.75 then Color.RED
          else Color.GRAY);
 
@@ -21,7 +21,7 @@ def pcallRatio = Round(SimpleMovingAvg(close(symbol = "$PCALL"), 10), 2);
 def pcall = close("$PCALL");
 def pcallOverlyBearish = if pcallRatio >= 1 then 1 else 0;
 def pcallOverlyBullish = if pcallRatio <= 0.85 then 1 else 0;
-AddLabel(market_pcr, "$PCALL: " + pcallRatio + " ", if pcallOverlyBullish then Color.GREEN
+AddLabel(market_pcr, "$PCALL: " + pcallRatio + "  ", if pcallOverlyBullish then Color.GREEN
          else if pcallOverlyBearish then Color.RED
          else Color.GRAY);
 
@@ -34,19 +34,19 @@ AddLabel(dow_pcr, "$PCI: " + pci + " ", if pci > 1.05 then Color.GREEN
 
 # Rusell Put/Call Ratio
 def pcrl = close("$PCRL");
-AddLabel(russle_pcr, "$PCRL: " + pcrl + " ", if pcrl > 1.05 then Color.GREEN
+AddLabel(russle_pcr, "$PCRL: " + pcrl + "  ", if pcrl > 1.05 then Color.GREEN
          else if pcrl > 0.75 then Color.GRAY
          else Color.RED);
 
 # S&P Put/Call Ratio
 def pcsp = close("$PCSP");
-AddLabel(snp_pcr, "$PCSP: " + pcsp + " ", if pcsp > 1.05 then Color.GREEN
+AddLabel(snp_pcr, "$PCSP: " + pcsp + "  ", if pcsp > 1.05 then Color.GREEN
          else if pcsp > 0.75 then Color.GRAY
          else Color.RED);
 
 # Nasdaq Put/Call Ratio
 def pcnd = close("$PCND");
-AddLabel(nasdaq_pcr, "$PCND: " + pcnd + " ", if pcnd > 1.05 then Color.GREEN
+AddLabel(nasdaq_pcr, "$PCND: " + pcnd + "  ", if pcnd > 1.05 then Color.GREEN
          else if pcnd > 0.75 then Color.GRAY
          else Color.RED);
 

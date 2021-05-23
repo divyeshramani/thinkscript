@@ -26,4 +26,4 @@ def secondary = if logic[returnLength] == 0 then 0 else (logic - logic[returnLen
 
 def Beta = Round(covariance(primary, secondary, length) / Sqr(stdev(secondary, length)), 2);
 
-AddLabel(yes, index + " Beta: " + Beta, Color.WHITE);
+AddLabel(yes, index + " Beta: " + Beta + "  ", Color.WHITE);
