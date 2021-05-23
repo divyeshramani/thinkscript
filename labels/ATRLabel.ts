@@ -22,4 +22,4 @@ DefineGlobalColor("ATRLow", Color.RED);
 DefineGlobalColor("ATRMid", Color.GRAY);
 
 # AddLabel (yes, (Concat("ATR: ", Round(currentATR, 1))) + " ", if currentATR > 25 then GlobalColor("ATRHigh") else if currentATR < 20 then GlobalColor("ATRLow") else GlobalColor("ATRMid"));
-AddLabel (yes, (Concat("ATR: ", Round(currentATR, 1))) + " ", if atrPct >= highATRPctThresold then GlobalColor("ATRHigh") else if atrPct <= lowATRPctThresold then GlobalColor("ATRLow") else GlobalColor("ATRMid"));
+AddLabel (yes, (Concat("ATR: ", Round(currentATR, 1))) + "|" + Round(atrPct,2) + "%  ", if atrPct >= highATRPctThresold then GlobalColor("ATRHigh") else if atrPct <= lowATRPctThresold then GlobalColor("ATRLow") else GlobalColor("ATRMid"));
