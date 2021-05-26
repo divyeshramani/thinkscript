@@ -1,5 +1,5 @@
-# thinkscript
-thinkscript indicators and scans
+# thinkscript collection
+thinkscript indicators, scans and columns.
 
 
 ### TI_AnchoredVWAPSTUDY
