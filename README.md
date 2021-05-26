@@ -1,6 +1,7 @@
 # thinkscript collection
 thinkscript indicators, scans and columns.
 
+# Indicators 
 
 ### TI_AnchoredVWAPSTUDY
 VWAP caclulated from specific date or from today if DayTrading flag is turned on. 
@@ -11,9 +12,7 @@ VWAP caclulated from specific date or from today if DayTrading flag is turned on
 Anchored Cumulative Advance Decline trading system based on FAANG stock
 <br/><br/>
 
-### strategy/TTM_Squeeze_BacktesterSTRATEGY
-TTM Squeeze back testing strategy
-<br/><br/>
+
 
 ### TI_SupplyDemandEdgeSTUDY
 Market internals Supply/Demand based on $ADSPD and $TICK only on intraday chart. 
@@ -39,5 +38,51 @@ How many times it Gaps Up and fall down to fill the gap and how many times it ga
 ![Smart Earning Flow Chart](images/SmartEarnings.png?raw=true "SmartEarningFlowChart")
 <br/><br/>
 
+### Dynamic RSI
 
 
+<br/><br/>
+
+### Multi Time Frame DMI 
+
+<br/><br/>
+
+### Advanced Volume Zone Oscillator
+
+<br/><br/>
+
+
+## Lables
+
+
+<br/><br/>
+
+## Scans 
+
+### VScore Scan 
+
+<br/><br/>
+
+### DMI Power Move Scans
+
+<br/><br/>
+
+
+### Unusal Volume Scans
+
+<br/><br/>
+
+
+## Columns/Dashboard
+
+### TTM Squeeze Dashbaord
+
+<br/><br/>
+
+## Strategy
+
+Strategy can be used to backtest your hypothesis. Look in "strategy" folder. 
+
+### TTM_Squeeze_BacktesterSTRATEGY
+TTM Squeeze back testing strategy
+<br/><br/>
