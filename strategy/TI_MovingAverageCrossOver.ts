@@ -15,6 +15,8 @@ def longExitCondition = longEntries and fastMA crosses below slowMA;
 def shortEntryCondition = shortEntries and fastMA crosses below slowMA;
 def shortExitCondition = shortEntries and fastMA crosses above slowMA;
 
+AddLabel(yes, fastMALength + " " + (if averageTypeFast == 0 then "Simple" else if averageTypeFast == 1 then "EMA" else if averageTypeFast == 2 then "Weighted" else if averageTypeFast == 3  then "Wilders" else "Hull") + " x " + slowMALength + " " + (if averageTypeSlow == 0 then "Simple" else if averageTypeSlow == 1 then "EMA" else if averageTypeSlow == 2 then "Weighted" else if averageTypeSlow == 3  then "Wilders" else "Hull") + " ", Color.YELLOW);
+
 # Long Orders
 AddOrder(OrderType.BUY_TO_OPEN, longEntryCondition, close, quantity);
 AddOrder(OrderType.SELL_TO_CLOSE, longExitCondition, close, quantity);
