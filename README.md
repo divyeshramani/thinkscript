@@ -57,15 +57,7 @@ How many times it Gaps Up and fall down to fill the gap and how many times it ga
 
 <br/><br/>
 
-## Scans 
 
-### VScore Scan 
-
-<br/><br/>
-
-### DMI Power Move Scans
-
-<br/><br/>
 
 
 ### Unusal Volume Scans
