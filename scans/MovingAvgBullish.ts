@@ -20,6 +20,10 @@ def VolAvg34 = average(volume, 34)[1];
 
 def volume_rising = VolAvg8 > VolAvg21 and VolAvg21 > VolAvg34;
 
+# 1. EMA(8) > EMA(21) > EMA(31)
+# 2. VolumeAvg(8) > VolumeAvg(21) > VolumeAvg(34)
+# 3. Recent low (of last 90 days) less than All time high by 20% or more
+
 plot signal = close < ath and bullish and volume_rising and 
               ((ath - recent_low) / recent_low >= pctAthThreshold);
 
