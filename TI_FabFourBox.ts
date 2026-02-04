@@ -1,4 +1,4 @@
-# Previous Day Last 20 Bars High/Low Lines
+# Previous Day Last 22 Bars High/Low Lines
 # Draws horizontal lines at the high and low of the last 20 bars from the previous trading day
 
 input numBars = 22;
@@ -62,4 +62,4 @@ AddLabel(showLabels, "Last " + numBars + " Bars High: " + AsText(last20BarsHigh,
 AddLabel(showLabels, "Last " + numBars + " Bars Low: " + AsText(last20BarsLow, NumberFormat.DOLLAR) + " ", color.LIGHT_ORANGE);
 
 # Add cloud between the lines (optional visual)
-# AddCloud(PrevDayLast20High, PrevDayLast20Low, Color.LIGHT_GREEN, Color.LIGHT_RED);
+AddCloud(PrevDayLast20High, PrevDayLast20Low, Color.LIGHT_GRAY, Color.LIGHT_ORANGE);
