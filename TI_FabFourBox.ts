@@ -12,6 +12,7 @@ def aggr = GetAggregationPeriod();
 def numBarsFinal = if aggr == AggregationPeriod.TWO_MIN then numBars
                    else if aggr == AggregationPeriod.FIVE_MIN then 9
                    else if aggr == AggregationPeriod.TEN_MIN then 4
+                   else if aggr == AggregationPeriod.FIFTEEN_MIN then 3
                    else if aggr == AggregationPeriod.TWENTY_MIN then 2
                    else 1;
 
@@ -67,8 +68,8 @@ PrevDayLast20Low.SetStyle(Curve.MEDIUM_DASH);
 PrevDayLast20Low.HideBubble();
 
 # Add labels
-AddLabel(showLabels, "Last " + numBars + " Bars High: " + AsText(last20BarsHigh, NumberFormat.DOLLAR) + " ", color.light_GREEN);
-AddLabel(showLabels, "Last " + numBars + " Bars Low: " + AsText(last20BarsLow, NumberFormat.DOLLAR) + " ", color.LIGHT_ORANGE);
+AddLabel(showLabels, "45 mins High: " + AsText(last20BarsHigh, NumberFormat.DOLLAR) + " ", color.light_GREEN);
+AddLabel(showLabels, "45 mins Low: " + AsText(last20BarsLow, NumberFormat.DOLLAR) + " ", color.LIGHT_ORANGE);
 
 # Add cloud between the lines (optional visual)
 AddCloud(PrevDayLast20High, PrevDayLast20Low, Color.LIGHT_GRAY, Color.LIGHT_ORANGE);
