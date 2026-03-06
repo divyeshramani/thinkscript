@@ -18,6 +18,10 @@ def numBarsFinal = if aggr == AggregationPeriod.TWO_MIN then numBars
 
 def isDisplay = GetAggregationPeriod() <= AggregationPeriod.HOUR;
 
+input length = 14;
+input averageType = AverageType.WILDERS;
+def atrDaily = MovingAverage(averageType, TrueRange(high(period = "DAY"), close(period = "DAY"), low(period = "DAY")), length);
+
 # Detect new day
 def newDay = GetDay() != GetDay()[1];
 
@@ -66,6 +70,26 @@ PrevDayLast20Low.SetLineWeight(lineWeight);
 PrevDayLast20Low.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
 PrevDayLast20Low.SetStyle(Curve.MEDIUM_DASH);
 PrevDayLast20Low.HideBubble();
+
+plot atrUp = if isDisplay and isToday then last20BarsHigh + atrDaily else Double.NaN;
+atrUp.SetDefaultColor(color.LIGHT_GREEN);
+atrUp.SetLineWeight(1);
+atrUp.HideBubble();
+
+plot atr66Up = if isDisplay and isToday then last20BarsHigh + atrDaily *0.66 else Double.NaN;
+atr66Up.SetDefaultColor(color.DARK_GREEN);
+atr66Up.SetLineWeight(1);
+atr66Up.HideBubble();
+
+plot atrDown = if isDisplay and isToday then last20BarsLow - atrDaily else Double.NaN;
+atrDown.SetDefaultColor(color.LIGHT_RED);
+atrDown.SetLineWeight(1);
+atrDown.HideBubble();
+
+plot atr66Down = if isDisplay and isToday then last20BarsLow - atrDaily *0.66 else Double.NaN;
+atr66Down.SetDefaultColor(color.DARK_RED);
+atr66Down.SetLineWeight(1);
+atr66Down.HideBubble();
 
 # Add labels
 AddLabel(showLabels, "45 mins High: " + AsText(last20BarsHigh, NumberFormat.DOLLAR) + " ", color.light_GREEN);
