@@ -6,7 +6,7 @@ input showLabels = yes;
 input tradeEntryStartTimeEST = 930;
 input tradeEntryEndTimeEST = 1100;
 
-input lineWeight = 2;
+input lineWeight = 1;
 
 def aggr = GetAggregationPeriod();
 def numBarsFinal = if aggr == AggregationPeriod.TWO_MIN then numBars
@@ -52,12 +52,14 @@ if newDay {
     last20BarsLow = last20BarsLow[1];
 }
 
+def midPoint = (last20BarsHigh + last20BarsLow) / 2;
+
 # Only show lines for today's session
 def isToday = GetDay() == GetLastDay();
 
 # Plot the high line
 plot PrevDayLast20High = if isDisplay and isToday and !IsNaN(last20BarsHigh) and isInTradeEntryTime then last20BarsHigh else Double.NaN;
-PrevDayLast20High.SetDefaultColor(color.CYAN);
+PrevDayLast20High.SetDefaultColor(Color.CYAN);
 PrevDayLast20High.SetLineWeight(lineWeight);
 PrevDayLast20High.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
 PrevDayLast20High.SetStyle(Curve.MEDIUM_DASH);
@@ -65,35 +67,39 @@ PrevDayLast20High.HideBubble();
 
 # Plot the low line
 plot PrevDayLast20Low = if isDisplay and isToday and !IsNaN(last20BarsLow) and isInTradeEntryTime then last20BarsLow else Double.NaN;
-PrevDayLast20Low.SetDefaultColor(color.ORANGE);
+PrevDayLast20Low.SetDefaultColor(Color.ORANGE);
 PrevDayLast20Low.SetLineWeight(lineWeight);
 PrevDayLast20Low.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
 PrevDayLast20Low.SetStyle(Curve.MEDIUM_DASH);
 PrevDayLast20Low.HideBubble();
 
-plot atrUp = if isDisplay and isToday then last20BarsHigh + atrDaily else Double.NaN;
-atrUp.SetDefaultColor(color.LIGHT_GREEN);
+plot atrUp = if isDisplay and isToday then midPoint + atrDaily else Double.NaN;
+atrUp.SetDefaultColor(Color.LIGHT_GREEN);
+atrUp.SetStyle(Curve.MEDIUM_DASH);
 atrUp.SetLineWeight(1);
 atrUp.HideBubble();
 
-plot atr66Up = if isDisplay and isToday then last20BarsHigh + atrDaily *0.66 else Double.NaN;
-atr66Up.SetDefaultColor(color.DARK_GREEN);
+plot atr66Up = if isDisplay and isToday then midPoint + atrDaily * 0.66 else Double.NaN;
+atr66Up.SetDefaultColor(Color.DARK_GREEN);
+atr66Up.SetStyle(Curve.SHORT_DASH);
 atr66Up.SetLineWeight(1);
 atr66Up.HideBubble();
 
-plot atrDown = if isDisplay and isToday then last20BarsLow - atrDaily else Double.NaN;
-atrDown.SetDefaultColor(color.LIGHT_RED);
+plot atrDown = if isDisplay and isToday then midPoint - atrDaily else Double.NaN;
+atrDown.SetDefaultColor(Color.LIGHT_RED);
+atrDown.SetStyle(Curve.MEDIUM_DASH);
 atrDown.SetLineWeight(1);
 atrDown.HideBubble();
 
-plot atr66Down = if isDisplay and isToday then last20BarsLow - atrDaily *0.66 else Double.NaN;
-atr66Down.SetDefaultColor(color.DARK_RED);
+plot atr66Down = if isDisplay and isToday then midPoint - atrDaily * 0.66 else Double.NaN;
+atr66Down.SetDefaultColor(Color.DARK_RED);
+atr66Down.SetStyle(Curve.SHORT_DASH);
 atr66Down.SetLineWeight(1);
 atr66Down.HideBubble();
 
 # Add labels
-AddLabel(showLabels, "45 mins High: " + AsText(last20BarsHigh, NumberFormat.DOLLAR) + " ", color.light_GREEN);
-AddLabel(showLabels, "45 mins Low: " + AsText(last20BarsLow, NumberFormat.DOLLAR) + " ", color.LIGHT_ORANGE);
+AddLabel(showLabels, "45 mins High: " + AsText(last20BarsHigh, NumberFormat.DOLLAR) + " ", Color.LIGHT_GREEN);
+AddLabel(showLabels, "45 mins Low: " + AsText(last20BarsLow, NumberFormat.DOLLAR) + " ", Color.LIGHT_ORANGE);
 
 # Add cloud between the lines (optional visual)
 AddCloud(PrevDayLast20High, PrevDayLast20Low, Color.LIGHT_GRAY, Color.LIGHT_ORANGE);
