@@ -1,0 +1,10 @@
+Market Pulse Dashboard
+Written by TOS Indicators - 2021
+Instructions on How to Import Dashboard Code: https://youtu.be/mFqMcF103k8?t=155
+Full Tutorial Available Here: https://tosindicators.com/dashboards/market-pulse-dashboard
+
+
+Market Pulse Dashboard Code (Daily Time Frame): http://tos.mx/aksy2Uq
+Market Pulse Dashboard Code (30m Time Frame): http://tos.mx/Bt4ovoP
+
+Full indicator tutorial available here: https://tosindicators.com/indicators/market-pulse
